@@ -18,6 +18,9 @@
 		8C833A921D69648B00965F05 /* SongsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C833A901D69648B00965F05 /* SongsCell.m */; };
 		8C833A931D69648B00965F05 /* SongsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C833A911D69648B00965F05 /* SongsCell.xib */; };
 		8C833A961D69775600965F05 /* SongsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C833A951D69775600965F05 /* SongsViewController.m */; };
+		8CE9EECA1D6ABF6C00562A27 /* AlbumsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CE9EEC91D6ABF6C00562A27 /* AlbumsViewController.m */; };
+		8CE9EECE1D6AC03500562A27 /* AlbumsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CE9EECC1D6AC03500562A27 /* AlbumsCell.m */; };
+		8CE9EECF1D6AC03500562A27 /* AlbumsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CE9EECD1D6AC03500562A27 /* AlbumsCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +41,11 @@
 		8C833A911D69648B00965F05 /* SongsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SongsCell.xib; sourceTree = "<group>"; };
 		8C833A941D69775600965F05 /* SongsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongsViewController.h; sourceTree = "<group>"; };
 		8C833A951D69775600965F05 /* SongsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongsViewController.m; sourceTree = "<group>"; };
+		8CE9EEC81D6ABF6C00562A27 /* AlbumsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumsViewController.h; sourceTree = "<group>"; };
+		8CE9EEC91D6ABF6C00562A27 /* AlbumsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumsViewController.m; sourceTree = "<group>"; };
+		8CE9EECB1D6AC03500562A27 /* AlbumsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumsCell.h; sourceTree = "<group>"; };
+		8CE9EECC1D6AC03500562A27 /* AlbumsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumsCell.m; sourceTree = "<group>"; };
+		8CE9EECD1D6AC03500562A27 /* AlbumsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlbumsCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +108,8 @@
 				8C833A751D695FD800965F05 /* Start.m */,
 				8C833A941D69775600965F05 /* SongsViewController.h */,
 				8C833A951D69775600965F05 /* SongsViewController.m */,
+				8CE9EEC81D6ABF6C00562A27 /* AlbumsViewController.h */,
+				8CE9EEC91D6ABF6C00562A27 /* AlbumsViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -119,6 +129,9 @@
 				8C833A8F1D69648B00965F05 /* SongsCell.h */,
 				8C833A901D69648B00965F05 /* SongsCell.m */,
 				8C833A911D69648B00965F05 /* SongsCell.xib */,
+				8CE9EECB1D6AC03500562A27 /* AlbumsCell.h */,
+				8CE9EECC1D6AC03500562A27 /* AlbumsCell.m */,
+				8CE9EECD1D6AC03500562A27 /* AlbumsCell.xib */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -154,6 +167,7 @@
 				TargetAttributes = {
 					8C833A6A1D695FD800965F05 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = QXF33N93KH;
 					};
 				};
 			};
@@ -180,6 +194,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CE9EECF1D6AC03500562A27 /* AlbumsCell.xib in Resources */,
 				8C833A931D69648B00965F05 /* SongsCell.xib in Resources */,
 				8C833A811D695FD800965F05 /* LaunchScreen.storyboard in Resources */,
 				8C833A7E1D695FD800965F05 /* Assets.xcassets in Resources */,
@@ -195,7 +210,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C833A761D695FD800965F05 /* Start.m in Sources */,
+				8CE9EECA1D6ABF6C00562A27 /* AlbumsViewController.m in Sources */,
 				8C833A731D695FD800965F05 /* AppDelegate.m in Sources */,
+				8CE9EECE1D6AC03500562A27 /* AlbumsCell.m in Sources */,
 				8C833A921D69648B00965F05 /* SongsCell.m in Sources */,
 				8C833A7C1D695FD800965F05 /* MyMusicPlayer.xcdatamodeld in Sources */,
 				8C833A701D695FD800965F05 /* main.m in Sources */,
@@ -311,10 +328,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = MyMusicPlayer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = COM.RGO.MyMusicPlayer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -322,10 +342,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = MyMusicPlayer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = COM.RGO.MyMusicPlayer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -348,6 +371,7 @@
 				8C833A871D695FD800965F05 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

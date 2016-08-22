@@ -1,18 +1,18 @@
 //
-//  SongsViewController.m
+//  AlbumsViewController.m
 //  MyMusicPlayer
 //
-//  Created by Ricardo Gonzalez on 21/08/16.
+//  Created by Ricardo Gonzalez on 22/08/16.
 //  Copyright © 2016 RGO. All rights reserved.
 //
 
-#import "SongsViewController.h"
+#import "AlbumsViewController.h"
 
-@interface SongsViewController ()
+@interface AlbumsViewController ()
 
 @end
 
-@implementation SongsViewController
+@implementation AlbumsViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -36,34 +36,42 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    MPMediaQuery *songsQuery = [MPMediaQuery songsQuery];
-    NSArray *songs = [songsQuery items];
+
+    MPMediaQuery *albumsQuery = [MPMediaQuery albumsQuery];
+    NSArray *albums = [albumsQuery collections];
     
-    return [songs count];
+    return [albums count];
 }
 
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    SongsCell *cell = (SongsCell *)[tableView dequeueReusableCellWithIdentifier:@"SongsCell"];
+
+    AlbumsCell *cell = (AlbumsCell *)[tableView dequeueReusableCellWithIdentifier:@"AlbumsCell"];
     
     if (cell == nil) {
-        [tableView registerNib:[UINib nibWithNibName:@"SongsCell" bundle:nil] forCellReuseIdentifier:@"SongsCell"];
-        cell = [tableView dequeueReusableCellWithIdentifier:@"SongsCell"];
+        [tableView registerNib:[UINib nibWithNibName:@"AlbumsCell" bundle:nil] forCellReuseIdentifier:@"AlbumsCell"];
+        cell = [tableView dequeueReusableCellWithIdentifier:@"AlbumsCell"];
     }
- 
- // Configure the cell...
- 
- MPMediaQuery *songsQuery = [MPMediaQuery songsQuery];
- NSArray *songs = [songsQuery items];
- 
- MPMediaItem *rowItem = [songs objectAtIndex:indexPath.row];
+    MPMediaQuery *albumsQuery = [MPMediaQuery albumsQuery];
+    NSArray *albums = [albumsQuery collections];
+    
+    MPMediaItem *rowItem = [[albums objectAtIndex:indexPath.row] representativeItem];
     cell.textLabel.textColor = [UIColor whiteColor];
- cell.textLabel.text = [rowItem valueForProperty:MPMediaItemPropertyTitle];
- cell.detailTextLabel.text = [rowItem valueForProperty:MPMediaItemPropertyArtist];
- 
- return cell;
- 
+    cell.textLabel.text = [rowItem valueForProperty:MPMediaItemPropertyAlbumTitle];
+    cell.detailTextLabel.text = [rowItem valueForProperty:MPMediaItemPropertyAlbumArtist];
+    
+    MPMediaItemArtwork *artwork = [rowItem valueForProperty:MPMediaItemPropertyArtwork];
+    
+    UIImage *artworkImage = [artwork imageWithSize: CGSizeMake (44, 44)];
+   /*
+    if (artworkImage) {
+        cell.imageView.image = artworkImage;
+    } else {
+        cell.imageView.image = [UIImage imageNamed:@"No-artwork-albums.png"];
+    }
+    
+    
+    */
+return cell;
 }
 -(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
     //1. Setup the CATransform3D structure
@@ -90,7 +98,6 @@
     cell.frame = CGRectMake(0, cell.frame.origin.y, cell.frame.size.width, cell.frame.size.height);
     [UIView commitAnimations];
 }
-
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {

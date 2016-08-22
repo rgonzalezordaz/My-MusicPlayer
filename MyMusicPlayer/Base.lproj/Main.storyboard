@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--Songs-->
         <scene sceneID="Erw-UE-GMB">
             <objects>
-                <tableViewController id="UrP-rI-c5D" sceneMemberID="viewController">
+                <tableViewController id="UrP-rI-c5D" userLabel="Songs" customClass="SongsViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="TA7-mr-iGh">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -18,16 +18,16 @@
                             <outlet property="delegate" destination="UrP-rI-c5D" id="sLJ-yu-zBK"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="6Bo-HT-aew"/>
+                    <navigationItem key="navigationItem" title="Songs" id="6Bo-HT-aew" userLabel="Songs"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m40-in-3hx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="879" y="-395"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Album-->
         <scene sceneID="YLE-nA-vj1">
             <objects>
-                <tableViewController id="HEh-ld-rLp" sceneMemberID="viewController">
+                <tableViewController title="Albums" id="HEh-ld-rLp" userLabel="Album" customClass="AlbumsViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="svH-kf-1XD">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -37,7 +37,7 @@
                             <outlet property="delegate" destination="HEh-ld-rLp" id="mfZ-wb-OLV"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="6w8-SL-45Q"/>
+                    <navigationItem key="navigationItem" title="Albums" id="6w8-SL-45Q"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lF2-eo-TMP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -47,7 +47,7 @@
         <scene sceneID="9FI-ou-xoM">
             <objects>
                 <navigationController id="lVc-xV-Tb7" userLabel="Album" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="o4Q-tz-nKw" userLabel="Album"/>
+                    <tabBarItem key="tabBarItem" title="Albums" id="o4Q-tz-nKw" userLabel="Album"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="idQ-Oq-Ssc" userLabel="Album">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -63,8 +63,8 @@
         <!--Songs-->
         <scene sceneID="juD-rr-Ykq">
             <objects>
-                <navigationController id="jws-3r-23M" userLabel="Songs" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="wGZ-lh-nwY" userLabel="Songs"/>
+                <navigationController title="Songs" id="jws-3r-23M" userLabel="Songs" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Songs" id="wGZ-lh-nwY" userLabel="Songs"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="dw2-TU-3NT" userLabel="Songs">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -75,7 +75,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S40-45-ruJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="322" y="-395"/>
+            <point key="canvasLocation" x="336" y="-395"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="dZN-C6-tnd">
