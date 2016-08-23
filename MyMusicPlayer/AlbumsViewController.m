@@ -7,6 +7,7 @@
 //
 
 #import "AlbumsViewController.h"
+#import "AlbumDetailViewController.h"
 
 @interface AlbumsViewController ()
 
@@ -45,12 +46,13 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
-    AlbumsCell *cell = (AlbumsCell *)[tableView dequeueReusableCellWithIdentifier:@"AlbumsCell"];
+   AlbumsCell *cell = (AlbumsCell *)[tableView dequeueReusableCellWithIdentifier:@"AlbumsCell"];
     
     if (cell == nil) {
         [tableView registerNib:[UINib nibWithNibName:@"AlbumsCell" bundle:nil] forCellReuseIdentifier:@"AlbumsCell"];
         cell = [tableView dequeueReusableCellWithIdentifier:@"AlbumsCell"];
     }
+
     MPMediaQuery *albumsQuery = [MPMediaQuery albumsQuery];
     NSArray *albums = [albumsQuery collections];
     
@@ -60,17 +62,11 @@
     cell.detailTextLabel.text = [rowItem valueForProperty:MPMediaItemPropertyAlbumArtist];
     
     MPMediaItemArtwork *artwork = [rowItem valueForProperty:MPMediaItemPropertyArtwork];
-    
     UIImage *artworkImage = [artwork imageWithSize: CGSizeMake (44, 44)];
-   /*
+
     if (artworkImage) {
         cell.imageView.image = artworkImage;
-    } else {
-        cell.imageView.image = [UIImage imageNamed:@"No-artwork-albums.png"];
     }
-    
-    
-    */
 return cell;
 }
 -(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -97,6 +93,23 @@ return cell;
     //Reassure that cell its in its place (WaGo)
     cell.frame = CGRectMake(0, cell.frame.origin.y, cell.frame.size.width, cell.frame.size.height);
     [UIView commitAnimations];
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self performSegueWithIdentifier:@"AlbumDetail" sender:self];
+}
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    AlbumDetailViewController *detailViewController = [segue destinationViewController];
+    
+    MPMediaQuery *albumsQuery = [MPMediaQuery albumsQuery];
+    NSArray *albums = [albumsQuery collections];
+    
+    int selectedIndex = [[self.tableView indexPathForSelectedRow] row];
+    MPMediaItem *selectedItem = [[albums objectAtIndex:selectedIndex] representativeItem];
+    NSString *albumTitle = [selectedItem valueForProperty:MPMediaItemPropertyAlbumTitle];
+    
+    [detailViewController setAlbumTitle:albumTitle];
+
 }
 /*
 // Override to support conditional editing of the table view.

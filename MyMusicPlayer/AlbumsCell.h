@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface AlbumsCell : UITableViewCell
+@property (strong, nonatomic) IBOutlet UIImageView *Imagen;
 
 @end

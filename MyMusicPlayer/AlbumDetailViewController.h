@@ -1,5 +1,5 @@
 //
-//  AlbumsViewController.h
+//  AlbumDetailViewController.h
 //  MyMusicPlayer
 //
 //  Created by Ricardo Gonzalez on 22/08/16.
@@ -8,10 +8,17 @@
 
 #import <UIKit/UIKit.h>
 #import <MediaPlayer/MediaPlayer.h>
+#import "AlbumsViewController.h"
 #import "AlbumsCell.h"
-#import "AlbumDetailViewController.h"
+#import "SongsCell.h"
 
 
-@interface AlbumsViewController : UITableViewController
+@interface AlbumDetailViewController : UITableViewController
+{
+    NSString *albumTitle;
+}
+
+@property NSString *albumTitle;
+
 
 @end
