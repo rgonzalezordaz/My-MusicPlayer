@@ -10,4 +10,6 @@
 
 @interface SongsCell : UITableViewCell
 
+@property (strong, nonatomic) IBOutlet UIImageView *Audio;
+
 @end

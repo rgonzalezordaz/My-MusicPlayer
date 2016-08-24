@@ -166,10 +166,10 @@
         UIImageView *albumArtworkImageView = (UIImageView *)[cell Imagen];
         albumArtworkImageView.image = [self getAlbumArtworkWithSize:albumArtworkImageView.frame.size];
         
-        UILabel *albumArtistLabel = (UILabel *)[cell viewWithTag:101];
+        UILabel *albumArtistLabel = (UILabel *)[cell AlbumText];
         albumArtistLabel.text = [self getAlbumArtist];
         
-        UILabel *albumInfoLabel = (UILabel *)[cell viewWithTag:102];
+        UILabel *albumInfoLabel = (UILabel *)[cell AlbumInfoText];
         albumInfoLabel.text = [self getAlbumInfo];
         
         return cell;

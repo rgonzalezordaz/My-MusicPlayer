@@ -10,5 +10,7 @@
 
 @interface AlbumsCell : UITableViewCell
 @property (strong, nonatomic) IBOutlet UIImageView *Imagen;
+@property (strong, nonatomic) IBOutlet UILabel *AlbumText;
+@property (strong, nonatomic) IBOutlet UILabel *AlbumInfoText;
 
 @end
