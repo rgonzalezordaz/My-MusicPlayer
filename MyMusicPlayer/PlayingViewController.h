@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <MediaPlayer/MediaPlayer.h>
+#import "Declarations.h"
 
 
 @interface PlayingViewController : UIViewController
@@ -30,8 +31,7 @@
     IBOutlet UIButton *ShuffleBtn;
 }
 
-@property BOOL Repetir;
-@property BOOL Shuffle;
+
 @property (nonatomic, retain) MPMusicPlayerController *musicPlayer;
 
 - (IBAction)playPause:(id)sender;

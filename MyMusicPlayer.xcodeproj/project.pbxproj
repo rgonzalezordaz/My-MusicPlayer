@@ -21,6 +21,7 @@
 		8CE540491D7A30A90054ECAF /* Pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CE540481D7A30A90054ECAF /* Pause.png */; };
 		8CE5404B1D7A43EA0054ECAF /* Repeat.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CE5404A1D7A43EA0054ECAF /* Repeat.png */; };
 		8CE5404D1D7A4ED90054ECAF /* Shuffle.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CE5404C1D7A4ED90054ECAF /* Shuffle.png */; };
+		8CE540501D7A5B4D0054ECAF /* Declarations.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CE5404F1D7A5B4D0054ECAF /* Declarations.m */; };
 		8CE9EECA1D6ABF6C00562A27 /* AlbumsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CE9EEC91D6ABF6C00562A27 /* AlbumsViewController.m */; };
 		8CE9EECE1D6AC03500562A27 /* AlbumsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CE9EECC1D6AC03500562A27 /* AlbumsCell.m */; };
 		8CE9EECF1D6AC03500562A27 /* AlbumsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CE9EECD1D6AC03500562A27 /* AlbumsCell.xib */; };
@@ -56,6 +57,8 @@
 		8CE540481D7A30A90054ECAF /* Pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pause.png; sourceTree = "<group>"; };
 		8CE5404A1D7A43EA0054ECAF /* Repeat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Repeat.png; sourceTree = "<group>"; };
 		8CE5404C1D7A4ED90054ECAF /* Shuffle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Shuffle.png; sourceTree = "<group>"; };
+		8CE5404E1D7A5B4D0054ECAF /* Declarations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Declarations.h; sourceTree = "<group>"; };
+		8CE5404F1D7A5B4D0054ECAF /* Declarations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Declarations.m; sourceTree = "<group>"; };
 		8CE9EEC81D6ABF6C00562A27 /* AlbumsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumsViewController.h; sourceTree = "<group>"; };
 		8CE9EEC91D6ABF6C00562A27 /* AlbumsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumsViewController.m; sourceTree = "<group>"; };
 		8CE9EECB1D6AC03500562A27 /* AlbumsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumsCell.h; sourceTree = "<group>"; };
@@ -148,6 +151,8 @@
 			children = (
 				8C833A711D695FD800965F05 /* AppDelegate.h */,
 				8C833A721D695FD800965F05 /* AppDelegate.m */,
+				8CE5404E1D7A5B4D0054ECAF /* Declarations.h */,
+				8CE5404F1D7A5B4D0054ECAF /* Declarations.m */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -272,6 +277,7 @@
 				8C833A7C1D695FD800965F05 /* MyMusicPlayer.xcdatamodeld in Sources */,
 				8C833A701D695FD800965F05 /* main.m in Sources */,
 				8C833A961D69775600965F05 /* SongsViewController.m in Sources */,
+				8CE540501D7A5B4D0054ECAF /* Declarations.m in Sources */,
 				8CDF90311D6B797700B8EC38 /* AlbumDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

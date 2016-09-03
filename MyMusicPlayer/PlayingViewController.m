@@ -25,8 +25,14 @@
     
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStyleBordered target:self action:@selector(back)];
     self.navigationItem.leftBarButtonItem = backButton;
-    self.Repetir = NO;
-    self.Shuffle = NO;
+    
+    if (Shuffle == NO){
+        musicPlayer.shuffleMode = 0;
+    }
+    if (Repetir == NO){
+        musicPlayer.repeatMode = 0;
+    }
+
     // Do any additional setup after loading the view.
 }
 - (void) back
@@ -133,28 +139,28 @@
 }
 
 - (IBAction)RepeatBtnPressed:(id)sender {
-    if (self.Repetir == NO){
-        self.Repetir = YES;
-        self.Shuffle = NO;
+    if (Repetir == NO){
+        Repetir = YES;
+        Shuffle = NO;
         musicPlayer.repeatMode = 2;
         musicPlayer.shuffleMode = 0;
         lblStatus.text = @"RepeatOn";
-    } else if(self.Repetir == YES){
-        self.Repetir = NO;
+    } else if(Repetir == YES){
+        Repetir = NO;
         musicPlayer.repeatMode = 0;
         lblStatus.text = @"";
     }
 }
 
 - (IBAction)ShuffleBtnPressed:(id)sender {
-    if (self.Shuffle == NO){
-        self.Shuffle = YES;
-        self.Repetir = NO;
+    if (Shuffle == NO){
+        Shuffle = YES;
+        Repetir = NO;
         musicPlayer.repeatMode = 0;
         musicPlayer.shuffleMode = 2;
         lblStatus.text = @"ShuffleOn";
-    } else if(self.Shuffle == YES){
-        self.Shuffle = NO;
+    } else if(Shuffle == YES){
+        Shuffle = NO;
         musicPlayer.shuffleMode = 0;
         lblStatus.text = @"";
     }
