@@ -86,7 +86,11 @@ SongsCell *cell = (SongsCell *)[tableView dequeueReusableCellWithIdentifier:@"So
     [UIView commitAnimations];
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self performSegueWithIdentifier:@"Songs" sender:self];
     
+}
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
     MPMediaQuery *songsQuery = [MPMediaQuery songsQuery];
     NSArray *songs = [songsQuery items];
     
@@ -94,13 +98,12 @@ SongsCell *cell = (SongsCell *)[tableView dequeueReusableCellWithIdentifier:@"So
     
     MPMediaItem *selectedItem = [[songs objectAtIndex:selectedIndex] representativeItem];
     
-    MPMusicPlayerController *musicPlayer = [MPMusicPlayerController iPodMusicPlayer];
+    MPMusicPlayerController *musicPlayer = [MPMusicPlayerController systemMusicPlayer];
     
     [musicPlayer setQueueWithItemCollection:[MPMediaItemCollection collectionWithItems:[songsQuery items]]];
     [musicPlayer setNowPlayingItem:selectedItem];
     
     [musicPlayer play];
-    
 }
 
 @end

@@ -18,6 +18,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = albumTitle;
+    self.tableView.backgroundColor = [UIColor blackColor];
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    
 }
 
 - (UIImage *) getAlbumArtworkWithSize: (CGSize) albumSize
@@ -42,7 +45,7 @@
         
     }
     
-    return [UIImage imageNamed:@"No-artwork-album.png"];
+    return [UIImage imageNamed:@"No- WorkArt.jpeg"];
 }
 
 - (NSString *) getAlbumArtist
@@ -210,6 +213,29 @@
         
         return cell;
 }
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if ([[self.tableView indexPathForSelectedRow] row]!= 0){
+    [self performSegueWithIdentifier:@"toPlayer" sender:self];
+    }
+}
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    MPMediaQuery *albumQuery = [MPMediaQuery albumsQuery];
+    MPMediaPropertyPredicate *albumPredicate = [MPMediaPropertyPredicate predicateWithValue: albumTitle forProperty: MPMediaItemPropertyAlbumTitle];
+    [albumQuery addFilterPredicate:albumPredicate];
+    NSArray *albumTracks = [albumQuery items];
+    
+    int selectedIndex = [[self.tableView indexPathForSelectedRow] row];
+    
+    MPMediaItem *selectedItem = [[albumTracks objectAtIndex:selectedIndex-1] representativeItem];
+    
+    MPMusicPlayerController *musicPlayer = [MPMusicPlayerController systemMusicPlayer];
+    
+    [musicPlayer setQueueWithItemCollection:[MPMediaItemCollection collectionWithItems:[albumQuery items]]];
+    [musicPlayer setNowPlayingItem:selectedItem];
+    
+    [musicPlayer play];
 }
 
 #pragma mark - Navigation
